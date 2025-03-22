@@ -36,7 +36,7 @@ public class PostServiceImpl implements PostService{
 
     @Override
     public List<Post> findPostsByUserWithPageable(Long userId, int pageNumber, int pageSize) {
-        Pageable pageable = PageRequest.of(pageNumber,pageSize);
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
         Page<Post> page = repository.findPostsByUserWithPageable(userId, pageable);
         return page.getContent();
     }
